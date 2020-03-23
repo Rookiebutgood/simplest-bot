@@ -6,6 +6,7 @@ const https = require("https");
 const bot = new Telegraf(process.env.BOT_KEY)
 
 bot.start( (ctx) => {
+  ctx.reply("Hola amigos!");
   ({ ctx }) =>
   ctx('', Markup
     .keyboard(['Получить картинку'])
