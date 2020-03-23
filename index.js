@@ -3,7 +3,7 @@ const Extra = require('telegraf/extra')
 const Markup = require('telegraf/markup')
 const https = require("https");
 
-const bot = new Telegraf(BOT_KEY)
+const bot = new Telegraf(process.env.BOT_KEY)
 
 bot.start( (ctx) => {
   ({ ctx }) =>
@@ -17,7 +17,7 @@ bot.start( (ctx) => {
 
 
 bot.hears('Получить картинку', (ctx)=>{
-  const url = 'https://api.unsplash.com/photos/random?client_id='+PUBLIC_KEY;
+  const url = 'https://api.unsplash.com/photos/random?client_id='+process.env.PUBLIC_KEY;
 
   https.get(url, res => {
     res.setEncoding("utf8");
