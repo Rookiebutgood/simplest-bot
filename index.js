@@ -33,6 +33,11 @@ bot.hears('Получить картинку', (ctx)=>{
   });
 })
 
-bot.launch()
+bot.launch({
+  webhook: {
+    domain: process.env.URL,
+    port: process.env.PORT
+  }
+ })
 
 
