@@ -33,11 +33,9 @@ bot.hears('Получить картинку', (ctx)=>{
   });
 })
 
-bot.launch({
-  webhook: {
-    domain: process.env.URL,
-    port: process.env.PORT
-  }
- })
+bot.telegram.setWebhook(`${process.env.URL}/bot${process.env.BOT_KEY}`);
+bot.startWebhook(`/bot${process.env.BOT_KEY}`, null, process.env.PORT)
+
+bot.launch()
 
 
