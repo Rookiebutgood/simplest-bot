@@ -17,6 +17,8 @@ bot.start( (ctx) => {
 } )
 
 
+bot.telegram.setWebhook(`${process.env.HEROKU_URL}/bot${process.env.BOT_KEY}`);
+
 bot.hears('Получить картинку', (ctx)=>{
   const url = 'https://api.unsplash.com/photos/random?client_id='+process.env.PUBLIC_KEY;
 
@@ -32,9 +34,6 @@ bot.hears('Получить картинку', (ctx)=>{
     });
   });
 })
-
-bot.telegram.setWebhook(`${process.env.URL}/bot${process.env.BOT_KEY}`);
-bot.startWebhook(`/bot${process.env.BOT_KEY}`, null, process.env.PORT)
 
 bot.launch()
 
