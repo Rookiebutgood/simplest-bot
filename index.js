@@ -5,7 +5,7 @@ const https = require("https");
 
 const bot = new Telegraf(process.env.BOT_KEY)
 
-//Hola!
+//Hola amigos!
 
 bot.start( (ctx) => {
   ctx.reply("Hola amigos!");
